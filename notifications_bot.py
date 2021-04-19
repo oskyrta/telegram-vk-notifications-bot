@@ -44,7 +44,7 @@ class Bot:
             if len(missing_fields) > 0:
                 raise RuntimeError('Following fields are missing in the settings file: ' + ', '.join(missing_fields))
 
-            if 'last_post_id' not in bot_settings.keys():
+            if 'last_post_id' not in bot_settings.keys() or self.__bot_settings['last_post_id'] == None:
                 posts = self.__get_posts(1)
                 bot_settings['last_post_id'] = posts[0]['id']
                 
