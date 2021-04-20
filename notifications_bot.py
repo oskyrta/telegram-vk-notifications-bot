@@ -88,7 +88,7 @@ class Bot:
                 self.__update_posts()
             except:
                 exception = 'Type: {}\nValue: {}\nTraceback: {}'.format(sys.exc_info()[0], sys.exc_info()[1], traceback.format_exc())
-                self.__bot.send_message( '373695639', exception )
+                self.__bot.send_message( self.__bot_settings['telegram_log_user_id'], exception )
 
             time.sleep(self.__bot_settings['refresh_interval_s'])
     
